@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 검색엔진 최적화 (SEO) 태그 -->
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Reliable Korean auto parts sourcing and export agency. We provide Genuine, OEM, and Aftermarket parts for Hyundai, Kia, GM, Renault, and KGM to global buyers.">
     <meta name="keywords" content="Korean auto parts, Hyundai parts export, Kia parts wholesale, OEM auto parts Korea, Aftermarket car parts, Korean vehicle spare parts, Auto parts sourcing">
     
@@ -101,7 +101,7 @@
             transition: 0.3s;
         }
 
-        /* Hero Section - 흰색 오버레이 농도를 0.5로 낮추어 부품 이미지가 선명하게 보이도록 조정 */
+        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(255, 255, 255, 0.50), rgba(255, 255, 255, 0.50)), 
                         url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
@@ -115,7 +115,7 @@
             font-size: 2.5rem;
             margin-bottom: 20px;
             color: var(--primary-color);
-            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9); /* 배경 위 가독성을 높이기 위한 서브 섀도우 */
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
         }
 
         .hero p {
@@ -310,14 +310,6 @@
             background: #285e61;
         }
 
-        #form-message {
-            margin-top: 15px;
-            font-weight: bold;
-            text-align: center;
-            color: var(--accent-color);
-        }
-
-        /* 진한 명조체 적용 클래스 */
         .code-snippet {
             background: #fff;
             padding: 20px;
@@ -375,6 +367,84 @@
             padding-top: 20px;
             font-size: 0.85rem;
             color: #a0aec0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .privacy-link {
+            color: #cbd5e0;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .privacy-link:hover {
+            color: #fff;
+        }
+
+        /* Privacy Policy Modal Style */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-card {
+            background: #fff;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            border-radius: 8px;
+            padding: 30px;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            color: var(--text-dark);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #a0aec0;
+        }
+
+        .modal-close:hover {
+            color: var(--text-dark);
+        }
+
+        .modal-card h2 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .modal-card h3 {
+            margin: 20px 0 10px;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+
+        .modal-card p, .modal-card ul {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .modal-card ul {
+            padding-left: 20px;
         }
 
         @media(max-width: 768px) {
@@ -404,7 +474,7 @@
 
     <!-- Header -->
     <header>
-        <div class="logo" data-en="Korean Auto Parts" data-ko="한국 오토 파츠">Korean Auto Parts</div>
+        <div class="logo" data-en="KAID" data-ko="KAID">KAID</div>
         <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
             <span></span>
             <span></span>
@@ -423,7 +493,7 @@
         </nav>
     </header>
 
-    <!-- Home Hero Section (배경 선명도 향상 조절) -->
+    <!-- Home Hero Section -->
     <section id="home" class="hero">
         <h1 data-en="Your Trusted Partner for Korean Auto Parts Sourcing & Export" data-ko="한국 자동차 부품 소싱 및 수출을 위한 신뢰할 수 있는 파트너">Your Trusted Partner for Korean Auto Parts Sourcing & Export</h1>
         <p data-en="Connecting verified Korean suppliers or manufacturers with global buyers. We supply Genuine, OEM, and Aftermarket parts with competitive pricing." data-ko="검증된 한국 공급자 또는 제조사와 글로벌 바이어를 연결합니다. 순정품, OEM, 애프터마켓 부품을 경쟁력 있는 가격에 공급합니다.">Connecting verified Korean suppliers or manufacturers with global buyers. We supply Genuine, OEM, and Aftermarket parts with competitive pricing.</p>
@@ -513,11 +583,8 @@
         <div class="sourcing-box">
             <p data-en="Please send your required Korean auto parts specifications or OE numbers via E-mail (car-kaid@naver.com), or use the quick form below:" data-ko="필요하신 한국 자동차 부품 사양이나 OE 번호를 이메일(car-kaid@naver.com)로 보내주시거나 아래 양식을 이용해 주세요:">Please send your required Korean auto parts specifications or OE numbers via E-mail (car-kaid@naver.com), or use the quick form below:</p>
             
-            <!-- FormSubmit 연동된 폼 (네이버 메일로 발송) -->
             <form action="https://formsubmit.co/car-kaid@naver.com" method="POST" class="sourcing-form">
-                <!-- 이메일 제목 설정 -->
-                <input type="hidden" name="_subject" value="[New Quote Request] Korean Auto Parts Website Inquiry">
-                <!-- 봇 스팸 방지 설정 -->
+                <input type="hidden" name="_subject" value="[New Quote Request] KAID Website Inquiry">
                 <input type="hidden" name="_captcha" value="false">
 
                 <div class="form-group">
@@ -531,7 +598,6 @@
                 <button type="submit" class="form-submit-btn" data-en="Submit Quote Request" data-ko="견적 요청 제출">Submit Quote Request</button>
             </form>
 
-            <!-- 진한 명조체 & 파란색 이메일 지정 박스 -->
             <div class="code-snippet" style="margin-top: 20px;" 
                  data-en='Submission Guide: Fill out the details above or send your Excel file directly to <span style="color: #0056b3;">car-kaid@naver.com</span>' 
                  data-ko='제출 안내: 위 양식을 채워주시거나 엑셀 파일을 <span style="color: #0056b3;">car-kaid@naver.com</span>으로 직접 보내주세요.'>
@@ -569,9 +635,85 @@
             </div>
         </div>
         <div class="copyright">
-            &copy; 2026 Korean Auto Parts Sourcing & Export Agency. All rights reserved.
+            <div>&copy; 2026 KAID. All rights reserved.</div>
+            <div><span class="privacy-link" id="openPrivacy">Privacy Policy</span></div>
         </div>
     </footer>
+
+    <!-- Privacy Policy Modal Window -->
+    <div class="modal-overlay" id="privacyModal">
+        <div class="modal-card">
+            <button class="modal-close" id="closePrivacy">&times;</button>
+            <h2>Privacy Policy</h2>
+            <p><strong>Effective Date:</strong> September 13, 2026</p>
+            <p><strong>Last Updated:</strong> September 13, 2026</p>
+            <br>
+            <p>we, KAID, respects your privacy and is committed to protecting the personal information of our users ("you" or "user") who access our services globally. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our application, or interact with our services (collectively, the "Services").</p>
+
+            <h3>1. Information We Collect</h3>
+            <p>We collect information that identifies, relates to, or describes you directly or indirectly.</p>
+            
+            <p style="margin-top: 10px;"><strong>Information You Provide Directly:</strong></p>
+            <ul>
+                <li><strong>Account Information:</strong> Name, email address, username, password, and profile details.</li>
+                <li><strong>Payment & Transaction Information:</strong> Billing address, payment card details (processed securely via third-party processors), and purchase history.</li>
+                <li><strong>Inquiries & Communications:</strong> Information submitted when contacting customer support or participating in surveys.</li>
+            </ul>
+
+            <p style="margin-top: 10px;"><strong>Information Collected Automatically:</strong></p>
+            <ul>
+                <li><strong>Device & Technical Data:</strong> IP address, browser type, operating system, device identifiers, and language preferences.</li>
+                <li><strong>Usage Information:</strong> Access times, pages viewed, links clicked, and features used.</li>
+                <li><strong>Location Data:</strong> Approximate location derived from your IP address.</li>
+            </ul>
+
+            <p style="margin-top: 10px;"><strong>Cookies and Tracking Technologies:</strong></p>
+            <p>We use cookies, web beacons, and similar technologies to remember your preferences, measure performance, and deliver personalized content.</p>
+
+            <h3>2. How We Use Your Information</h3>
+            <p>We process your personal information for the following business purposes:</p>
+            <ul>
+                <li><strong>Service Delivery:</strong> To operate, maintain, and provide the features and functionality of the Services.</li>
+                <li><strong>Account Management:</strong> To manage user accounts, authenticate users, and provide customer support.</li>
+                <li><strong>Communication:</strong> To send administrative notices, service updates, and marketing communications (where permitted by law).</li>
+                <li><strong>Security & Prevention:</strong> To detect, prevent, and investigate security incidents, fraud, or unauthorized activities.</li>
+                <li><strong>Legal Compliance:</strong> To comply with applicable legal obligations, court orders, or regulations.</li>
+            </ul>
+
+            <h3>3. Data Retention and Deletion</h3>
+            <p>We retain your personal information only for as long as necessary to fulfill the purposes for which it was collected, including legal, accounting, or reporting requirements. Once personal information is no longer needed, we securely delete, anonymize, or isolate the data from further processing.</p>
+
+            <h3>4. International Data Transfers and Third-Party Sharing</h3>
+            <p><strong>Cross-Border Transfers:</strong> Our primary servers and service providers may be located outside your country of residence (e.g., South Korea or the United States). By using our Services, you understand that your personal data may be transferred to and processed in jurisdictions that may have different data protection laws than your country. Where required, we implement adequate legal safeguards (such as Standard Contractual Clauses) to ensure your data remains protected.</p>
+            <p><strong>Third-Party Service Providers:</strong> We do not sell your personal information. We only share information with trusted third-party vendors (such as hosting providers, payment processors, and analytics partners) who process data strictly on our behalf under contractual confidentiality obligations.</p>
+
+            <h3>5. Your Rights and Choices</h3>
+            <p>Depending on your jurisdiction (e.g., European Union GDPR, California CCPA/CPRA), you may have the following rights regarding your personal information:</p>
+            <ul>
+                <li><strong>Right to Access / Portability:</strong> Request details on the personal data we hold about you and receive a copy in a structured format.</li>
+                <li><strong>Right to Rectification:</strong> Request correction of inaccurate or incomplete personal information.</li>
+                <li><strong>Right to Erasure ("Right to be Forgotten"):</strong> Request deletion of your personal data, subject to statutory retention obligations.</li>
+                <li><strong>Right to Restrict or Object:</strong> Object to or request restriction of our processing of your personal information (e.g., direct marketing).</li>
+                <li><strong>Right to Opt-Out:</strong> Request to opt out of the sale, sharing, or targeting advertising practices.</li>
+                <li><strong>Non-Discrimination:</strong> We will not discriminate against you for exercising any of your privacy rights.</li>
+            </ul>
+            <p>To exercise any of these rights, please contact us using the contact details provided below.</p>
+
+            <h3>6. Cookie Preferences & Tracking Opt-Out</h3>
+            <p>When visiting our website from certain jurisdictions (e.g., the European Economic Area), you will be presented with a Cookie Consent Banner allowing you to accept or manage non-essential cookies. You can also configure your web browser settings to reject or block cookies at any time.</p>
+
+            <h3>7. Children’s Privacy</h3>
+            <p>Our Services are not intended for or directed toward children under the age of 13 (or 16 in certain jurisdictions). We do not knowingly collect personal information from children. If we become aware that a child has provided us with personal information, we will take immediate steps to delete such data.</p>
+
+            <h3>8. Contact Us</h3>
+            <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact our Data Protection Team at:</p>
+            <p>
+                <strong>Company Name:</strong> KAID<br>
+                <strong>Email:</strong> car-kaid@naver.com<br>
+                <strong>Address:</strong> Room B140, 228, Bugwang-ro, Sosa-gu, Bucheon-si, Gyeonggi-do, Republic of Korea
+            </p>
+        </div>
+    </div>
 
     <!-- JavaScript for Interactions -->
     <script>
@@ -608,6 +750,25 @@
                     }
                 }
             });
+        });
+
+        // 3. Privacy Policy Modal Functions
+        const openPrivacy = document.getElementById('openPrivacy');
+        const closePrivacy = document.getElementById('closePrivacy');
+        const privacyModal = document.getElementById('privacyModal');
+
+        openPrivacy.addEventListener('click', () => {
+            privacyModal.style.display = 'flex';
+        });
+
+        closePrivacy.addEventListener('click', () => {
+            privacyModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === privacyModal) {
+                privacyModal.style.display = 'none';
+            }
         });
     </script>
 </body>
