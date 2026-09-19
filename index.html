@@ -1,776 +1,811 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Korean Auto Parts Sourcing & Export | Hyundai, Kia, Ssangyong, GM, Renault</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Reliable Korean auto parts sourcing and export agency. We provide Genuine, OEM, and Aftermarket parts for Hyundai, Kia, GM, Renault, and KGM to global buyers.">
-    <meta name="keywords" content="Korean auto parts, Hyundai auto parts, Kia auto parts, Hyundai geniune parts, Kia genuine parts, Korean aftermarket parts, Korean vehicle spare parts, Auto parts sourcing">
-    
-    <title data-en="Korean Auto Parts Sourcing for Hyundai, Kia, Ssangyong, GM and Renault" data-ko="현대, 기아, 쌍용, 지엠, 르노를 위한 한국 자동차 부품 소싱">Korean Auto Parts Sourcing for Hyundai, Kia, Ssangyong, GM and Renault</title>
-    
+    <meta name="description" content="Reliable Korean auto parts sourcing and export agency. We supply Genuine (MOBIS), OEM, and high-quality Aftermarket parts for Hyundai, Kia, Ssangyong, Chevrolet GM Korea, and Renault Samsung worldwide. Direct B2B export from Korea.">
+    <meta name="keywords" content="Korean auto parts, Hyundai spare parts, Kia spare parts, Ssangyong parts, GM Korea parts, Renault Korea parts, MOBIS genuine parts, Korean auto parts supplier, Korean auto parts exporter, auto parts sourcing agent, B2B auto parts Korea, Korean car parts wholesale">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourdomain.com/" />
+
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Korean Auto Parts Sourcing & Export | KAID">
+    <meta property="og:description" content="Reliable Korean auto parts sourcing and export agency. Genuine, OEM, and Aftermarket parts supplier.">
+    <meta property="og:image" content="https://yourdomain.com/images/og-image.jpg">
+    <meta property="og:url" content="https://yourdomain.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <!-- Google Search Console / Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "KAID",
+      "url": "https://yourdomain.com",
+      "logo": "https://yourdomain.com/favicon.png",
+      "description": "Reliable Korean auto parts sourcing and export agency.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Room B140, 228, Bugwang-ro, Sosa-gu",
+        "addressLocality": "Bucheon-si",
+        "addressRegion": "Gyeonggi-do",
+        "addressCountry": "KR"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+82-10-3358-3268",
+        "contactType": "sales",
+        "email": "car-kaid@naver.com"
+      }
+    }
+    </script>
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
-            --primary-color: #1a365d;
-            --secondary-color: #2b6cb0;
-            --accent-color: #319795;
-            --bg-light: #f7fafc;
-            --text-dark: #1a202c;
-            --border-color: #e2e8f0;
+            --primary: #0A192F;
+            --primary-light: #1E293B;
+            --accent: #00D2FF;
+            --accent-hover: #00B8E6;
+            --text-dark: #334155;
+            --text-muted: #64748B;
+            --bg-light: #F8FAFC;
+            --white: #FFFFFF;
+            --border: #E2E8F0;
+            --shadow: 0 10px 30px -10px rgba(0,0,0,0.08);
+            --radius: 12px;
+            --transition: all 0.3s ease;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
         }
 
         body {
             color: var(--text-dark);
+            background-color: var(--bg-light);
             line-height: 1.6;
-            background-color: #fff;
+            overflow-x: hidden;
         }
 
-        /* Header */
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* HEADER & NAVBAR */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
+            padding: 1rem 2rem;
         }
 
         .logo {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
         }
 
-        nav ul {
+        .logo i {
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        .nav-links {
             display: flex;
+            gap: 2rem;
             list-style: none;
-            gap: 30px;
             align-items: center;
         }
 
-        nav a {
+        .nav-links a {
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 600;
             font-size: 0.95rem;
-            transition: color 0.3s;
+            transition: var(--transition);
         }
 
-        nav a:hover {
-            color: var(--secondary-color);
+        .nav-links a:hover {
+            color: var(--accent);
         }
 
-        .lang-switch {
-            background: var(--bg-light);
-            border: 1px solid var(--border-color);
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        /* Mobile Hamburger Button */
-        .hamburger {
+        .mobile-toggle {
             display: none;
-            flex-direction: column;
-            gap: 6px;
-            background: none;
-            border: none;
+            font-size: 1.5rem;
             cursor: pointer;
+            color: var(--primary);
         }
 
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--primary-color);
-            border-radius: 3px;
-            transition: 0.3s;
-        }
-
-        /* Hero Section */
+        /* HERO SECTION */
         .hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.50), rgba(255, 255, 255, 0.50)), 
-                        url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-            color: var(--text-dark);
+            padding: 9rem 2rem 5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
             text-align: center;
-            padding: 180px 20px 100px;
-            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: var(--bg-light);
+            clip-path: polygon(0 100%, 100% 100%, 100% 0);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0, 210, 255, 0.15);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(0, 210, 255, 0.3);
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
         }
 
         .hero p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: #1a202c;
-            font-weight: 600;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+            font-size: 1.15rem;
+            color: #94A3B8;
+            margin-bottom: 2.5rem;
         }
 
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            border-radius: 5px;
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1rem;
             text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s, color 0.3s;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
         }
 
-        .btn-primary {
-            background-color: var(--accent-color);
-            color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        .cta-btn:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
         }
 
-        .btn-primary:hover {
-            background-color: #285e61;
-        }
-
-        .btn-secondary {
-            background-color: #fff;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--primary-color);
-            color: #fff;
-        }
-
-        /* Brand Showcase */
-        .brands {
-            padding: 80px 20px;
-            background-color: var(--bg-light);
-            text-align: center;
-        }
-
-        .brands h2 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-
-        .brands p {
-            color: #666;
-            margin-bottom: 50px;
-        }
-
-        .brand-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            align-items: center;
-            gap: 15px;
-            max-width: 1100px;
+        /* SECTION LAYOUT */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 10px;
         }
 
-        .brand-logo-wrapper {
-            background: #fff;
-            padding: 15px 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border: 1px solid var(--border-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.3s ease;
-            height: 85px;
-        }
-
-        .brand-logo-wrapper:hover {
-             transform: scale(1.05);
-        }
-
-        .brand-logo {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            opacity: 0.9;
-            transition: opacity 0.3s;
-        }
-        
-        .brand-logo-wrapper:hover .brand-logo {
-            opacity: 1;
-        }
-
-        /* Container General */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
-        section h2.section-title {
+        .section-header {
             text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
             font-size: 2rem;
-            margin-bottom: 50px;
-            color: var(--primary-color);
+            color: var(--primary);
+            margin-bottom: 0.5rem;
         }
 
-        /* Strengths & Services Grid */
-        .grid-3 {
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* BRANDS SECTION */
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .brand-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            text-align: center;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .brand-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .brand-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .brand-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .brand-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* SERVICES SECTION */
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 2rem;
         }
 
-        .card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--secondary-color);
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
         }
 
-        .card h3 {
-            margin-bottom: 15px;
-            color: var(--primary-color);
+        .service-card:hover {
+            transform: translateY(-5px);
         }
 
-        /* Sourcing Form Box */
-        .sourcing-box {
-            background: var(--bg-light);
-            border-radius: 8px;
-            padding: 40px;
-            border: 1px solid var(--border-color);
-        }
-
-        .sourcing-box p {
-            margin-bottom: 25px;
-            font-size: 1.05rem;
-        }
-
-        .sourcing-form {
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--accent-hover);
+            border-radius: 50%;
             display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* INQUIRY FORM */
+        .inquiry-wrapper {
+            background: var(--white);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            padding: 3rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
         }
 
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 5px;
-            text-align: left;
+            gap: 0.5rem;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
         }
 
         .form-group label {
+            font-size: 0.9rem;
             font-weight: 600;
-            color: var(--primary-color);
-            font-size: 0.95rem;
+            color: var(--primary);
         }
 
-        .form-group input, .form-group textarea {
-            padding: 10px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
             font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition);
         }
 
-        .form-submit-btn {
-            background: var(--accent-color);
-            color: #fff;
-            padding: 12px;
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.1);
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 2rem;
             border: none;
-            border-radius: 4px;
-            font-weight: bold;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
             cursor: pointer;
-            transition: background 0.3s;
+            width: 100%;
+            transition: var(--transition);
+            margin-top: 1rem;
         }
 
-        .form-submit-btn:hover {
-            background: #285e61;
+        .submit-btn:hover {
+            background: var(--primary-light);
         }
 
-        .code-snippet {
-            background: #fff;
-            padding: 20px;
-            border-left: 4px solid var(--accent-color);
-            font-family: 'Georgia', 'Times New Roman', 'Batang', 'Gungsuh', serif;
-            font-weight: bold;
-            font-size: 1.05rem;
-            color: #2d3748;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            margin-top: 20px;
-        }
-
-        /* Footer / Contact */
-        footer {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 60px 20px 30px;
-        }
-
-        .footer-content {
-            max-width: 1100px;
-            margin: 0 auto;
+        /* CONTACT INFO */
+        .contact-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 1.5rem;
+            margin-top: 3rem;
         }
 
-        .footer-col h4 {
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 8px;
-            display: inline-block;
-        }
-
-        .footer-col p {
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-            color: #cbd5e0;
-        }
-
-        .footer-col a {
-            color: #cbd5e0;
-            text-decoration: none;
-        }
-
-        .footer-col a:hover {
-            color: #fff;
-        }
-
-        .copyright {
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
-            font-size: 0.85rem;
-            color: #a0aec0;
+        .info-item {
             display: flex;
-            flex-direction: column;
-            gap: 8px;
             align-items: center;
+            gap: 1rem;
+            background: var(--white);
+            padding: 1.2rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
         }
 
-        .privacy-link {
-            color: #cbd5e0;
-            text-decoration: underline;
-            cursor: pointer;
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--accent-hover);
+        }
+
+        .info-text h4 {
             font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
         }
 
-        .privacy-link:hover {
-            color: #fff;
+        .info-text p {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary);
         }
 
-        /* Privacy Policy Modal Style */
-        .modal-overlay {
+        /* FOOTER */
+        footer {
+            background: var(--primary);
+            color: #94A3B8;
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .footer-logo {
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        /* MODAL */
+        .modal {
             display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0,0,0,0.5);
             z-index: 2000;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
         }
 
-        .modal-card {
-            background: #fff;
+        .modal-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius);
+            max-width: 600px;
             width: 90%;
-            max-width: 800px;
             max-height: 80vh;
-            border-radius: 8px;
-            padding: 30px;
             overflow-y: auto;
             position: relative;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            color: var(--text-dark);
         }
 
-        .modal-close {
+        .close-btn {
             position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 1.8rem;
-            background: none;
-            border: none;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
             cursor: pointer;
-            color: #a0aec0;
+            color: var(--text-muted);
         }
 
-        .modal-close:hover {
-            color: var(--text-dark);
-        }
-
-        .modal-card h2 {
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        .modal-card h3 {
-            margin: 20px 0 10px;
-            color: var(--secondary-color);
-            font-size: 1.1rem;
-        }
-
-        .modal-card p, .modal-card ul {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-
-        .modal-card ul {
-            padding-left: 20px;
-        }
-
-        @media(max-width: 768px) {
-            header { padding: 15px 20px; }
-            .hamburger { display: flex; }
-            nav ul {
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .nav-links {
                 display: none;
-                flex-direction: column;
                 position: absolute;
-                top: 70px;
+                top: 100%;
                 left: 0;
                 width: 100%;
-                background: #fff;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                padding: 20px 0;
-                gap: 15px;
-                text-align: center;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1.5rem;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+                border-bottom: 1px solid var(--border);
             }
-            nav ul.active { display: flex; }
-            .hero h1 { font-size: 2rem; }
-            .brand-grid { gap: 8px; }
-            .brand-logo-wrapper { padding: 10px 5px; height: 65px; }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: span 1;
+            }
         }
     </style>
-
-    <link rel="icon" href="/favicon.png" type="image/png">
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- HEADER -->
     <header>
-        <div class="logo" data-en="KAID" data-ko="KAID">KAID</div>
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav>
-            <ul id="nav-list">
-                <li><a href="#home" data-en="Home" data-ko="홈">Home</a></li>
-                <li><a href="#products" data-en="Products" data-ko="취급 품목">Products</a></li>
-                <li><a href="#process" data-en="Export Process" data-ko="수출 프로세스">Export Process</a></li>
-                <li><a href="#faq" data-en="Trade Info" data-ko="거래 정보">Trade Info</a></li>
-                <li><a href="#sourcing" data-en="Quote" data-ko="견적문의">Quote</a></li>
-                <li><a href="#contact" data-en="Contact" data-ko="연락처">Contact</a></li>
-                <li><button class="lang-switch" id="langToggle">EN / KO</button></li>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-gears"></i>
+                <div class="logo-text">KAID <span>AUTO</span></div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#brands">Supported Brands</a></li>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#inquiry">Request Quote</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
     </header>
 
-    <!-- Home Hero Section -->
-    <section id="home" class="hero">
-        <h1 data-en="Your Trusted Partner for Korean Auto Parts Sourcing & Export" data-ko="한국 자동차 부품 소싱 및 수출을 위한 신뢰할 수 있는 파트너">Your Trusted Partner for Korean Auto Parts Sourcing & Export</h1>
-        <p data-en="Connecting verified Korean suppliers or manufacturers with global buyers. We supply Genuine, OEM, and Aftermarket parts with competitive pricing." data-ko="검증된 한국 공급자 또는 제조사와 글로벌 바이어를 연결합니다. 순정품, OEM, 애프터마켓 부품을 경쟁력 있는 가격에 공급합니다.">Connecting verified Korean suppliers or manufacturers with global buyers. We supply Genuine, OEM, and Aftermarket parts with competitive pricing.</p>
-        <div class="btn-group">
-            <a href="#sourcing" class="btn btn-primary" data-en="Get a Quote" data-ko="견적 요청">Get a Quote</a>
-            <a href="#products" class="btn btn-secondary" data-en="Explore Products" data-ko="제품 둘러보기">Explore Products</a>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">B2B Korean Auto Parts Sourcing Agent</span>
+            <h1>Your Direct Gateway to Genuine & OEM Korean Auto Parts</h1>
+            <p>Sourcing and exporting high-quality spare parts for Hyundai, Kia, Ssangyong, GM Korea, and Renault Korea to buyers worldwide.</p>
+            <a href="#inquiry" class="cta-btn">
+                <span>Request a Quote</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
         </div>
     </section>
 
-    <!-- Brand Showcase -->
-    <section class="brands">
-        <h2 data-en="Specialized in Major Korean Vehicle Brands" data-ko="국내 주요 완성차 브랜드 전문 취급">Specialized in Major Korean Vehicle Brands</h2>
-        <p data-en="We source reliable parts for representative Korean vehicle brands, ensuring top quality for our global clients." data-ko="글로벌 고객을 위해 한국 대표 자동차 브랜드의 신뢰할 수 있는 부품을 소싱합니다.">We source reliable parts for representative Korean vehicle brands, ensuring top quality for our global clients.</p>
-        <div class="brand-grid">
-            <div class="brand-logo-wrapper">
-                <img src="images/hyundai.png" alt="hyundai auto spare parts" class="brand-logo">
-            </div>
-            <div class="brand-logo-wrapper">
-                <img src="images/kia.png" alt="kia auto spare parts" class="brand-logo">
-            </div>
-            <div class="brand-logo-wrapper">
-                <img src="images/gm.png" alt="gm auto spare parts" class="brand-logo">
-            </div>
-            <div class="brand-logo-wrapper">
-                 <img src="images/kgm.jpg" alt="kgm ssangyong auto spare parts" class="brand-logo">
-            </div>
-            <div class="brand-logo-wrapper">
-                <img src="images/renault.png" alt="renault auto spare parts" class="brand-logo">
-            </div>
+    <!-- SUPPORTED BRANDS -->
+    <section id="brands">
+        <div class="section-header">
+            <h2>Supported Brands</h2>
+            <p>We supply comprehensive parts coverage for all major Korean vehicle manufacturers.</p>
         </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="container">
-        <h2 class="section-title" data-en="Our Product Lineup" data-ko="취급 품목 라인업">Our Product Lineup</h2>
-        <div class="grid-3">
-            <div class="card">
-                <h3 data-en="Genuine Parts (OES)" data-ko="순정 부품 (OES)">Genuine Parts (OES)</h3>
-                <p data-en="100% authentic parts directly from Hyundai Mobis, Kia, GM Korea, Renault, and KGM. Guaranteed perfect fit and factory quality." data-ko="현대모비스, 기아, 한국GM, 르노코리아, KGM의 100% 정품입니다. 완벽한 호환성과 공장 출고 품질을 보장합니다.">100% authentic parts directly from Hyundai Mobis, Kia, GM Korea, Renault, and KGM. Guaranteed perfect fit and factory quality.</p>
+        <div class="brands-grid">
+            <div class="brand-card">
+                <i class="fa-solid fa-car-side"></i>
+                <h3>HYUNDAI</h3>
+                <p>Genuine (MOBIS) & OEM</p>
             </div>
-            <div class="card">
-                <h3 data-en="OEM Parts" data-ko="OEM 부품">OEM Parts</h3>
-                <p data-en="Original Equipment Manufacturer parts from top tier-1 suppliers like Mando, Valeo, Hanon, and Iljin. Same quality, better price." data-ko="만도, 발레오, 한온, 일진 등 1차 협력업체에서 생산된 부품입니다. 순정과 동일한 품질을 더 나은 가격에 제공합니다.">Original Equipment Manufacturer parts from top tier-1 suppliers like Mando, Valeo, Hanon, and Iljin. Same quality, better price.</p>
+            <div class="brand-card">
+                <i class="fa-solid fa-car-side"></i>
+                <h3>KIA</h3>
+                <p>Genuine (MOBIS) & OEM</p>
             </div>
-            <div class="card">
-                <h3 data-en="Aftermarket Parts" data-ko="애프터마켓 부품">Aftermarket Parts</h3>
-                <p data-en="Cost-effective, high-quality aftermarket alternatives perfectly suited for maintenance and wholesale distribution." data-ko="도매 유통 및 정비 유지보수에 완벽하게 적합한 가성비 높은 고품질 대체 부품입니다.">Cost-effective, high-quality aftermarket alternatives perfectly suited for maintenance and wholesale distribution.</p>
+            <div class="brand-card">
+                <i class="fa-solid fa-truck-pickup"></i>
+                <h3>KG MOBILITY</h3>
+                <p>Ssangyong Genuine Parts</p>
+            </div>
+            <div class="brand-card">
+                <i class="fa-solid fa-car"></i>
+                <h3>CHEVROLET</h3>
+                <p>GM Korea Parts</p>
+            </div>
+            <div class="brand-card">
+                <i class="fa-solid fa-car"></i>
+                <h3>RENAULT</h3>
+                <p>Renault Korea Parts</p>
             </div>
         </div>
     </section>
 
-    <!-- Export Process -->
-    <section id="process" style="background-color: var(--bg-light);">
-        <div class="container">
-            <h2 class="section-title" data-en="Export Service Process" data-ko="수출 프로세스">Export Service Process</h2>
-            <div class="card" style="border-top-color: var(--accent-color);">
-                <p><strong data-en="1. Inquiry & Sourcing:" data-ko="1. 문의 및 소싱:">1. Inquiry & Sourcing:</strong> <span data-en="Receiving buyer requirements (OE numbers, target price, quantities) and matching with optimal suppliers." data-ko="바이어 요구사항(OE 번호, 타겟 프라이스, 수량)을 접수하고 최적의 공급업체를 매칭합니다.">Receiving buyer requirements (OE numbers, target price, quantities) and matching with optimal suppliers.</span></p><br>
-                <p><strong data-en="2. Quotation & Negotiation:" data-ko="2. 견적 및 무역 조건 협상:">2. Quotation & Negotiation:</strong> <span data-en="Providing competitive pricing and negotiating trade terms (EXW, FOB, CIF, etc.)." data-ko="경쟁력 있는 단가를 제공하고 무역 조건(EXW, FOB, CIF 등)을 협상합니다.">Providing competitive pricing and negotiating trade terms (EXW, FOB, CIF, etc.).</span></p><br>
-                <p><strong data-en="3. Quality Inspection:" data-ko="3. 품질 검사:">3. Quality Inspection:</strong> <span data-en="Conducting strict product specification matching and quality checks prior to packing." data-ko="포장 전 제품 사양 일치 여부 및 엄격한 품질 검수를 진행합니다.">Conducting strict product specification matching and quality checks prior to packing.</span></p><br>
-                <p><strong data-en="4. Export Packing & Logistics:" data-ko="4. 수출 포장 및 물류:">4. Export Packing & Logistics:</strong> <span data-en="Providing export standard packaging (Pallets, Wooden Boxes) and handling shipping documents (CI, PL, B/L)." data-ko="안전한 수출 표준 포장(팔레트, 우든박스)을 제공하며 선적 서류(CI, PL, B/L 등)를 처리합니다.">Providing export standard packaging (Pallets, Wooden Boxes) and handling shipping documents (CI, PL, B/L).</span></p>
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <div class="section-header">
+            <h2>Our Core Services</h2>
+            <p>End-to-end B2B sourcing and export solutions tailored for global importers and distributors.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-boxes-packing"></i></div>
+                <h3>Genuine Parts Sourcing</h3>
+                <p>Direct supply of 100% Genuine Hyundai/Kia MOBIS, Ssangyong, GM, and Renault parts directly from certified Korean distributors.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-industry"></i></div>
+                <h3>OEM & High Quality Aftermarket</h3>
+                <p>Cost-effective alternative solutions supplying trusted Korean OEM brands (Mando, CTR, Sangsin, etc.) with strict quality verification.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-plane-departure"></i></div>
+                <h3>Consolidation & Export Logistics</h3>
+                <p>Professional packaging, container consolidation, and complete export documentation handling for fast and safe international delivery.</p>
             </div>
         </div>
     </section>
 
-    <!-- Trade Info & FAQ -->
-    <section id="faq" class="container">
-        <h2 class="section-title" data-en="Trade Terms & Info" data-ko="무역 거래 정보">Trade Terms & Info</h2>
-        <div class="grid-3">
-            <div class="card">
-                <h3 data-en="MOQ (Minimum Order)" data-ko="최소 주문 수량 (MOQ)">MOQ (Minimum Order)</h3>
-                <p data-en="We offer flexible MOQ policies to support diverse global buyers. Whether it's LCL or full containers, we can accommodate your needs." data-ko="글로벌 바이어를 지원하기 위해 유연한 MOQ 정책을 운영합니다. LCL 소량 화물부터 컨테이너 단위까지 모두 대응 가능합니다.">We offer flexible MOQ policies to support diverse global buyers. Whether it's LCL or full containers, we can accommodate your needs.</p>
-            </div>
-            <div class="card">
-                <h3 data-en="Payment Terms" data-ko="결제 조건">Payment Terms</h3>
-                <p data-en="Our standard payment term is T/T (Telegraphic Transfer). For large volume continuous orders, L/C (Letter of Credit) can be negotiated." data-ko="표준 결제 조건은 T/T(전신환)입니다. 대규모 지속 거래의 경우 L/C(신용장) 거래도 협의 가능합니다.">Our standard payment term is T/T (Telegraphic Transfer). For large volume continuous orders, L/C (Letter of Credit) can be negotiated.</p>
-            </div>
-            <div class="card">
-                <h3 data-en="Lead Time" data-ko="준비 및 배송 기간">Lead Time</h3>
-                <p data-en="Lead time varies depending on part availability and order size." data-ko="부품 재고 및 주문 규모에 따라 다릅니다.">Lead time varies depending on part availability and order size.</p>
-            </div>
+    <!-- INQUIRY FORM -->
+    <section id="inquiry">
+        <div class="section-header">
+            <h2>Sourcing Inquiry / Request a Quote</h2>
+            <p>Fill in your part requirements and VIN/Part Numbers below for a fast price quote.</p>
         </div>
-    </section>
-
-    <!-- Sourcing / Request a Quote -->
-    <section id="sourcing" class="container" style="padding-top: 0;">
-        <h2 class="section-title" data-en="Request a Quote" data-ko="견적 문의">Request a Quote</h2>
-        <div class="sourcing-box">
-            <p data-en="Please send your required Korean auto parts specifications or OE numbers via E-mail (car-kaid@naver.com), or use the quick form below:" data-ko="필요하신 한국 자동차 부품 사양이나 OE 번호를 이메일(car-kaid@naver.com)로 보내주시거나 아래 양식을 이용해 주세요:">Please send your required Korean auto parts specifications or OE numbers via E-mail (car-kaid@naver.com), or use the quick form below:</p>
-            
-            <form action="https://formsubmit.co/car-kaid@naver.com" method="POST" class="sourcing-form">
-                <input type="hidden" name="_subject" value="[New Quote Request] KAID Website Inquiry">
-                <input type="hidden" name="_captcha" value="false">
-
-                <div class="form-group">
-                    <label for="clientEmail" data-en="Your E-mail" data-ko="이메일 주소">Your E-mail</label>
-                    <input type="email" id="clientEmail" name="Buyer_Email" required placeholder="example@domain.com">
+        <div class="inquiry-wrapper">
+            <form action="https://formspree.io/f/xblddqep" method="POST">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="Name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="Company" placeholder="Auto Parts Ltd.">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="Email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country *</label>
+                        <input type="text" id="country" name="Country" required placeholder="United States">
+                    </div>
+                    <div class="form-group">
+                        <label for="brand">Vehicle Brand</label>
+                        <select id="brand" name="Brand">
+                            <option value="Hyundai">Hyundai</option>
+                            <option value="Kia">Kia</option>
+                            <option value="Ssangyong">KG Mobility (Ssangyong)</option>
+                            <option value="GM Chevrolet">Chevrolet (GM Korea)</option>
+                            <option value="Renault">Renault Korea</option>
+                            <option value="Multiple">Multiple Brands</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="grade">Preferred Quality Grade</label>
+                        <select id="grade" name="Grade">
+                            <option value="Genuine Only">Genuine Only</option>
+                            <option value="OEM / Aftermarket">OEM / High-Quality Aftermarket</option>
+                            <option value="Both Options">Quote Both Options</option>
+                        </select>
+                    </div>
+                    <div class="form-group full">
+                        <label for="message">Part Numbers / Description / VIN *</label>
+                        <textarea id="message" name="Message" rows="5" required placeholder="Please enter Part Numbers, Quantities, or Vehicle VIN numbers..."></textarea>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="partDetails" data-en="OE Numbers / Quantity" data-ko="부품 상세 / OE 번호 / 수량">OE Numbers / Quantity</label>
-                    <textarea id="partDetails" name="Inquiry_Details" rows="4" required placeholder="e.g., OE# 58101-1KA00, Qty: 100"></textarea>
-                </div>
-                <button type="submit" class="form-submit-btn" data-en="Submit Quote Request" data-ko="견적 요청 제출">Submit Quote Request</button>
+                <button type="submit" class="submit-btn">Send Sourcing Request</button>
             </form>
+        </div>
 
-            <div class="code-snippet" style="margin-top: 20px;" 
-                 data-en='Submission Guide: Fill out the details above or send your Excel file directly to <span style="color: #0056b3;">car-kaid@naver.com</span>'
-                 data-ko='제출 안내: 위 양식을 채워주시거나 엑셀 파일을 <span style="color: #0056b3;">car-kaid@naver.com</span>으로 직접 보내주세요.'>
-                Submission Guide: Fill out the details above or send your Excel file directly to <span style="color: #0056b3;">car-kaid@naver.com</span>
+        <!-- CONTACT DETAILS BELOW FORM -->
+        <div class="contact-info" id="contact">
+            <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div class="info-text">
+                    <h4>Email Inquiry</h4>
+                    <p>car-kaid@naver.com</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <div class="info-text">
+                    <h4>Direct Contact</h4>
+                    <p>+82-10-3358-3268</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div class="info-text">
+                    <h4>Office Address</h4>
+                    <p>Room B140, 228, Bugwang-ro, Sosa-gu, Bucheon-si, Gyeonggi-do, Korea</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Global Network -->
-    <section id="network" style="background-color: #fff; color: var(--text-dark); padding: 60px 20px; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-        <div class="container" style="text-align: center; padding: 0;">
-            <h2 class="section-title" style="color: var(--primary-color); margin-bottom: 30px;" data-en="Global Network" data-ko="글로벌 네트워크">Global Network</h2>
-            <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto; color: #4a5568;" data-en="Connecting Korean Auto Parts to the World. We serve key partner countries including the Middle East, Southeast Asia, CIS, and South America, tailored to diverse demands and local specifications." data-ko="한국 자동차 부품을 세계로 연결합니다. 중동, 동남아시아, CIS, 남미 등 주요 파트너 국가의 다양한 요구와 현지 사양에 맞춘 물류 서비스를 제공합니다.">
-                Connecting Korean Auto Parts to the World. We serve key partner countries including the Middle East, Southeast Asia, CIS, and South America, tailored to diverse demands and local specifications.
-            </p>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                KAID AUTO PARTS
+            </div>
+            <ul class="footer-links">
+                <li><a href="#" onclick="openModal('privacy'); return false;">Privacy Policy</a></li>
+                <li><a href="#contact">Contact Support</a></li>
+            </ul>
         </div>
-    </section>
-
-    <!-- Contact Us & Footer -->
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4 data-en="Contact Us" data-ko="연락처">Contact Us</h4>
-                <p><strong>E-mail:</strong> car-kaid@naver.com</p>
-                <p><strong>Phone / WhatsApp:</strong> +82 10 3358 3268</p>
-                <p><a href="https://wa.me/821033583268" target="_blank" data-en="💬 Chat on WhatsApp" data-ko="💬 왓츠앱 채팅하기">💬 Chat on WhatsApp</a></p>
-            </div>
-            <div class="footer-col">
-                <h4 data-en="Office Address" data-ko="사무실 주소">Office Address</h4>
-                <p data-en="Room B140, 228, Bugwang-ro, Sosa-gu, Bucheon-si, Gyeonggi-do, Korea" data-ko="경기도 부천시 소사구 부광로 228, B140호">Room B140, 228, Bugwang-ro, Sosa-gu, Bucheon-si, Gyeonggi-do, Korea</p>
-            </div>
-            <div class="footer-col">
-                <h4 data-en="Business Hours" data-ko="영업 시간">Business Hours</h4>
-                <p data-en="Mon - Fri: 09:00 - 18:00 (KST)" data-ko="월요일 - 금요일: 09:00 - 18:00 (KST)">Mon - Fri: 09:00 - 18:00 (KST)</p>
-            </div>
-        </div>
-        <div class="copyright">
-            <div>&copy; 2026 KAID. All rights reserved.</div>
-            <div><span class="privacy-link" id="openPrivacy">Privacy Policy</span></div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 KAID Auto Parts Sourcing Agency. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Privacy Policy Modal Window -->
-    <div class="modal-overlay" id="privacyModal">
-        <div class="modal-card">
-            <button class="modal-close" id="closePrivacy">&times;</button>
-            <h2>Privacy Policy</h2>
-            <p><strong>Effective Date:</strong> September 13, 2026</p>
-            <p><strong>Last Updated:</strong> September 13, 2026</p>
-            <br>
-            <p>we, KAID, respects your privacy and is committed to protecting the personal information of our users ("you" or "user") who access our services globally. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our application, or interact with our services (collectively, the "Services").</p>
+    <!-- PRIVACY POLICY MODAL -->
+    <div class="modal" id="privacyModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('privacy')">&times;</span>
+            <h2 style="margin-bottom: 1rem; color: var(--primary);">Privacy Policy</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Effective Date: January 1, 2026</p>
 
             <h3>1. Information We Collect</h3>
-            <p>We collect information that identifies, relates to, or describes you directly or indirectly.</p>
-            
-            <p style="margin-top: 10px;"><strong>Information You Provide Directly:</strong></p>
-            <ul>
-                <li><strong>Account Information:</strong> Name, email address, username, password, and profile details.</li>
-                <li><strong>Payment & Transaction Information:</strong> Billing address, payment card details (processed securely via third-party processors), and purchase history.</li>
-                <li><strong>Inquiries & Communications:</strong> Information submitted when contacting customer support or participating in surveys.</li>
-            </ul>
-
-            <p style="margin-top: 10px;"><strong>Information Collected Automatically:</strong></p>
-            <ul>
-                <li><strong>Device & Technical Data:</strong> IP address, browser type, operating system, device identifiers, and language preferences.</li>
-                <li><strong>Usage Information:</strong> Access times, pages viewed, links clicked, and features used.</li>
-                <li><strong>Location Data:</strong> Approximate location derived from your IP address.</li>
-            </ul>
-
-            <p style="margin-top: 10px;"><strong>Cookies and Tracking Technologies:</strong></p>
-            <p>We use cookies, web beacons, and similar technologies to remember your preferences, measure performance, and deliver personalized content.</p>
-
+            <p>When you fill out our sourcing inquiry form, we collect personal information including your name, email address, company name, country, and specific product inquiries.</p>
+            <br>
             <h3>2. How We Use Your Information</h3>
-            <p>We process your personal information for the following business purposes:</p>
-            <ul>
-                <li><strong>Service Delivery:</strong> To operate, maintain, and provide the features and functionality of the Services.</li>
-                <li><strong>Account Management:</strong> To manage user accounts, authenticate users, and provide customer support.</li>
-                <li><strong>Communication:</strong> To send administrative notices, service updates, and marketing communications (where permitted by law).</li>
-                <li><strong>Security & Prevention:</strong> To detect, prevent, and investigate security incidents, fraud, or unauthorized activities.</li>
-                <li><strong>Legal Compliance:</strong> To comply with applicable legal obligations, court orders, or regulations.</li>
-            </ul>
-
-            <h3>3. Data Retention and Deletion</h3>
-            <p>We retain your personal information only for as long as necessary to fulfill the purposes for which it was collected, including legal, accounting, or reporting requirements. Once personal information is no longer needed, we securely delete, anonymize, or isolate the data from further processing.</p>
-
-            <h3>4. International Data Transfers and Third-Party Sharing</h3>
-            <p><strong>Cross-Border Transfers:</strong> Our primary servers and service providers may be located outside your country of residence (e.g., South Korea or the United States). By using our Services, you understand that your personal data may be transferred to and processed in jurisdictions that may have different data protection laws than your country. Where required, we implement adequate legal safeguards (such as Standard Contractual Clauses) to ensure your data remains protected.</p>
-            <p><strong>Third-Party Service Providers:</strong> We do not sell your personal information. We only share information with trusted third-party vendors (such as hosting providers, payment processors, and analytics partners) who process data strictly on our behalf under contractual confidentiality obligations.</p>
-
-            <h3>5. Your Rights and Choices</h3>
-            <p>Depending on your jurisdiction (e.g., European Union GDPR, California CCPA/CPRA), you may have the following rights regarding your personal information:</p>
-            <ul>
-                <li><strong>Right to Access / Portability:</strong> Request details on the personal data we hold about you and receive a copy in a structured format.</li>
-                <li><strong>Right to Rectification:</strong> Request correction of inaccurate or incomplete personal information.</li>
-                <li><strong>Right to Erasure ("Right to be Forgotten"):</strong> Request deletion of your personal data, subject to statutory retention obligations.</li>
-                <li><strong>Right to Restrict or Object:</strong> Object to or request restriction of our processing of your personal information (e.g., direct marketing).</li>
-                <li><strong>Right to Opt-Out:</strong> Request to opt out of the sale, sharing, or targeting advertising practices.</li>
-                <li><strong>Non-Discrimination:</strong> We will not discriminate against you for exercising any of your privacy rights.</li>
-            </ul>
-            <p>To exercise any of these rights, please contact us using the contact details provided below.</p>
-
-            <h3>6. Cookie Preferences & Tracking Opt-Out</h3>
-            <p>When visiting our website from certain jurisdictions, you may be presented with a cookie banner allowing you to manage or opt-out of non-essential tracking cookies. You can also block or delete cookies through your individual browser settings at any time.</p>
-
-            <h3>7. Contact Us</h3>
-            <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:</p>
+            <p>We use the collected information strictly for responding to your price quote requests, arranging export logistics, and facilitating B2B communications.</p>
+            <br>
+            <h3>3. Information Sharing</h3>
+            <p>We do not sell, trade, or rent your personal information to third parties. We may share necessary details with trusted shipping line logistics partners solely for fulfilling your orders.</p>
+            <br>
+            <h3>4. Cookie Preferences & Tracking Opt-Out</h3>
+            <p>You can manage or block cookies through your individual browser settings at any time.</p>
+            <br>
+            <h3>5. Contact Us</h3>
+            <p>If you have any questions regarding this Privacy Policy, please contact us at:</p>
             <p><strong>E-mail:</strong> car-kaid@naver.com</p>
             <p><strong>Address:</strong> Room B140, 228, Bugwang-ro, Sosa-gu, Bucheon-si, Gyeonggi-do, Korea</p>
         </div>
     </div>
-</body>
-</html>
 
-    <!-- JavaScript for Modal & Language Switch (참고용) -->
+    <!-- JAVASCRIPT -->
     <script>
-        // 모달 열기/닫기 및 다국어 전환 스크립트가 정상 작동하는지 최종 확인하세요.
-    </script>
-        // 1. Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const navList = document.getElementById('nav-list');
+        // Mobile Navbar Toggle Function
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
 
-        hamburger.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
-
-        document.querySelectorAll('nav ul li a').forEach(link => {
-            link.addEventListener('click', () => {
-                navList.classList.remove('active');
-            });
-        });
-
-        // 2. Bilingual (EN / KO) Toggle
-        const langToggleBtn = document.getElementById('langToggle');
-        let currentLang = 'en';
-
-        langToggleBtn.addEventListener('click', () => {
-            currentLang = currentLang === 'en' ? 'ko' : 'en';
-            document.documentElement.lang = currentLang;
-            langToggleBtn.textContent = currentLang === 'en' ? 'EN / KO' : 'KO / EN';
-
-            document.querySelectorAll('[data-en]').forEach(el => {
-                const text = el.getAttribute(`data-${currentLang}`);
-                if (text) {
-                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                        el.placeholder = text;
-                    } else {
-                        el.innerHTML = text;
-                    }
-                }
-            });
-        });
-
-        // 3. Privacy Policy Modal Functions
-        const openPrivacy = document.getElementById('openPrivacy');
-        const closePrivacy = document.getElementById('closePrivacy');
-        const privacyModal = document.getElementById('privacyModal');
-
-        openPrivacy.addEventListener('click', () => {
-            privacyModal.style.display = 'flex';
-        });
-
-        closePrivacy.addEventListener('click', () => {
-            privacyModal.style.display = 'none';
-        });
-
-        window.addEventListener('click', (event) => {
-            if (event.target === privacyModal) {
-                privacyModal.style.display = 'none';
+        // Privacy Modal Functions
+        function openModal(id) {
+            if(id === 'privacy') {
+                document.getElementById('privacyModal').style.display = 'flex';
             }
-        });
+        }
+
+        function closeModal(id) {
+            if(id === 'privacy') {
+                document.getElementById('privacyModal').style.display = 'none';
+            }
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('privacyModal');
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
