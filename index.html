@@ -305,6 +305,15 @@
             margin-bottom: 1rem;
         }
 
+        .brand-card img {
+            max-width: 120px;
+            max-height: 60px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
         .brand-card h3 {
             font-size: 1.1rem;
             margin-bottom: 0.3rem;
@@ -427,6 +436,95 @@
 
         .submit-btn:hover {
             background: var(--primary-light);
+        }
+
+        .submit-btn:disabled {
+            background: var(--text-muted);
+            cursor: not-allowed;
+        }
+
+        /* FILE DROP ZONE */
+        .file-drop-zone {
+            border: 2px dashed var(--border);
+            border-radius: var(--radius);
+            padding: 3rem 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            background: var(--bg-light);
+        }
+
+        .file-drop-zone:hover,
+        .file-drop-zone.dragover {
+            border-color: var(--accent);
+            background: rgba(0, 210, 255, 0.06);
+        }
+
+        .file-drop-zone i {
+            font-size: 2.8rem;
+            color: var(--accent-hover);
+            margin-bottom: 1rem;
+        }
+
+        .file-drop-zone p {
+            margin: 0.2rem 0;
+        }
+
+        .drop-zone-sub {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .file-name-preview {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+            display: none;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.7rem 1rem;
+        }
+
+        .file-name-preview.active {
+            display: flex;
+        }
+
+        .file-name-preview i {
+            color: #22C55E;
+        }
+
+        .file-name-preview .remove-file {
+            margin-left: auto;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .form-note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .form-status {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+            display: none;
+        }
+
+        .form-status.success {
+            color: #22C55E;
+            display: block;
+        }
+
+        .form-status.error {
+            color: #EF4444;
+            display: block;
         }
 
         /* CONTACT INFO */
@@ -630,27 +728,27 @@
             </div>
             <div class="brands-grid">
                 <div class="brand-card">
-                    <i class="fa-solid fa-car-side"></i>
+                    <img src="images/hyundai.png" alt="Hyundai logo">
                     <h3>HYUNDAI</h3>
                     <p>Genuine (MOBIS) & OEM</p>
                 </div>
                 <div class="brand-card">
-                    <i class="fa-solid fa-car-side"></i>
+                    <img src="images/kia.png" alt="Kia logo">
                     <h3>KIA</h3>
                     <p>Genuine (MOBIS) & OEM</p>
                 </div>
                 <div class="brand-card">
-                    <i class="fa-solid fa-truck-pickup"></i>
+                    <img src="images/kgm.jpg" alt="KG Mobility (Ssangyong) logo">
                     <h3>KG MOBILITY</h3>
                     <p>Ssangyong Genuine Parts</p>
                 </div>
                 <div class="brand-card">
-                    <i class="fa-solid fa-car"></i>
+                    <img src="images/gm.png" alt="GM Chevrolet logo">
                     <h3>CHEVROLET</h3>
                     <p>GM Korea Parts</p>
                 </div>
                 <div class="brand-card">
-                    <i class="fa-solid fa-car"></i>
+                    <img src="images/renault.png" alt="Renault logo">
                     <h3>RENAULT</h3>
                     <p>Renault Korea Parts</p>
                 </div>
@@ -689,49 +787,24 @@
                 <p>Fill in your part requirements and VIN/Part Numbers below for a fast price quote.</p>
             </div>
             <div class="inquiry-wrapper">
-                <form action="https://formspree.io/f/xblddqep" method="POST">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="Name" required placeholder="John Doe" autocomplete="name">
+                <form id="inquiryForm">
+                    <div class="form-group full">
+                        <label for="fileUpload">Upload Your Part List (Excel) *</label>
+                        <div class="file-drop-zone" id="dropZone">
+                            <i class="fa-solid fa-file-excel"></i>
+                            <p><strong>Drag & drop your Excel file here</strong></p>
+                            <p class="drop-zone-sub">or click to browse (.xls, .xlsx, .csv &mdash; max 10MB)</p>
+                            <input type="file" id="fileUpload" name="attachment" accept=".xls,.xlsx,.csv" required hidden>
                         </div>
-                        <div class="form-group">
-                            <label for="company">Company Name</label>
-                            <input type="text" id="company" name="Company" placeholder="Auto Parts Ltd." autocomplete="organization">
+                        <div class="file-name-preview" id="fileNamePreview">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span id="fileNameText"></span>
+                            <i class="fa-solid fa-xmark remove-file" id="removeFile" title="Remove file"></i>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="Email" required placeholder="john@example.com" autocomplete="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="country">Country *</label>
-                            <input type="text" id="country" name="Country" required placeholder="United States" autocomplete="country-name">
-                        </div>
-                        <div class="form-group">
-                            <label for="brand">Vehicle Brand</label>
-                            <select id="brand" name="Brand">
-                                <option value="Hyundai">Hyundai</option>
-                                <option value="Kia">Kia</option>
-                                <option value="Ssangyong">KG Mobility (Ssangyong)</option>
-                                <option value="GM Chevrolet">Chevrolet (GM Korea)</option>
-                                <option value="Renault">Renault Korea</option>
-                                <option value="Multiple">Multiple Brands</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="grade">Preferred Quality Grade</label>
-                            <select id="grade" name="Grade">
-                                <option value="Genuine Only">Genuine Only</option>
-                                <option value="OEM / Aftermarket">OEM / High-Quality Aftermarket</option>
-                                <option value="Both Options">Quote Both Options</option>
-                            </select>
-                        </div>
-                        <div class="form-group full">
-                            <label for="message">Part Numbers / Description / VIN *</label>
-                            <textarea id="message" name="Message" rows="5" required placeholder="Please enter Part Numbers, Quantities, or Vehicle VIN numbers..."></textarea>
-                        </div>
+                        <p class="form-note">Select your part list, then click "Send" — your email app will open with our address pre-filled. Please attach the file you selected before sending.</p>
                     </div>
-                    <button type="submit" class="submit-btn">Send Sourcing Request</button>
+                    <button type="submit" class="submit-btn" id="submitBtn">Send Inquiry List</button>
+                    <p class="form-status" id="formStatus"></p>
                 </form>
             </div>
 
@@ -832,6 +905,124 @@
                 modal.style.display = "none";
             }
         }
+
+        // ===== EXCEL DRAG & DROP INQUIRY FORM =====
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileUpload');
+        const fileNamePreview = document.getElementById('fileNamePreview');
+        const fileNameText = document.getElementById('fileNameText');
+        const removeFile = document.getElementById('removeFile');
+        const inquiryForm = document.getElementById('inquiryForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formStatus = document.getElementById('formStatus');
+
+        const ALLOWED_EXTENSIONS = ['.xls', '.xlsx', '.csv'];
+        const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+
+        function isAllowedFile(file) {
+            const name = file.name.toLowerCase();
+            return ALLOWED_EXTENSIONS.some(ext => name.endsWith(ext));
+        }
+
+        function showSelectedFile(file) {
+            if (!isAllowedFile(file)) {
+                formStatus.textContent = 'Please upload an Excel or CSV file (.xls, .xlsx, .csv).';
+                formStatus.className = 'form-status error';
+                fileInput.value = '';
+                fileNamePreview.classList.remove('active');
+                return;
+            }
+            if (file.size > MAX_FILE_SIZE) {
+                formStatus.textContent = 'File is too large. Maximum size is 10MB.';
+                formStatus.className = 'form-status error';
+                fileInput.value = '';
+                fileNamePreview.classList.remove('active');
+                return;
+            }
+            formStatus.textContent = '';
+            formStatus.className = 'form-status';
+            fileNameText.textContent = file.name;
+            fileNamePreview.classList.add('active');
+        }
+
+        // Click to browse
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        // File chosen via browse dialog
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length > 0) {
+                showSelectedFile(fileInput.files[0]);
+            }
+        });
+
+        // Drag & drop events
+        ['dragenter', 'dragover'].forEach(evt => {
+            dropZone.addEventListener(evt, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                dropZone.classList.add('dragover');
+            });
+        });
+
+        ['dragleave', 'dragend'].forEach(evt => {
+            dropZone.addEventListener(evt, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                dropZone.classList.remove('dragover');
+            });
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dropZone.classList.remove('dragover');
+
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                showSelectedFile(files[0]);
+            }
+        });
+
+        // Remove selected file
+        removeFile.addEventListener('click', (e) => {
+            e.stopPropagation();
+            fileInput.value = '';
+            fileNamePreview.classList.remove('active');
+        });
+
+        // Open the buyer's email app with our address pre-filled (mailto).
+        // Note: browsers cannot attach a file to a mailto link for security reasons,
+        // so the buyer must manually attach the file they selected before sending.
+        const RECIPIENT_EMAIL = 'car-kaid@naver.com';
+
+        inquiryForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            if (!fileInput.files || fileInput.files.length === 0) {
+                formStatus.textContent = 'Please select your Excel file before sending.';
+                formStatus.className = 'form-status error';
+                return;
+            }
+
+            const fileName = fileInput.files[0].name;
+            const subject = 'Sourcing Inquiry - Part List';
+            const body =
+                'Hello KAID Auto Parts,\n\n' +
+                'I would like to request a quote for the parts listed in the attached file.\n\n' +
+                '(Please remember to attach the file "' + fileName + '" to this email before sending.)\n\n' +
+                'Thank you.';
+
+            const mailtoLink =
+                'mailto:' + RECIPIENT_EMAIL +
+                '?subject=' + encodeURIComponent(subject) +
+                '&body=' + encodeURIComponent(body);
+
+            window.location.href = mailtoLink;
+
+            formStatus.textContent = 'Your email app should now be open. Please attach "' + fileName + '" and hit send.';
+            formStatus.className = 'form-status success';
+        });
     </script>
 </body>
 </html>
