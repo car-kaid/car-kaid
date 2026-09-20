@@ -314,6 +314,19 @@
             margin-bottom: 1rem;
         }
 
+        /* Visually hidden but still readable by search engines & screen readers */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         .brand-card h3 {
             font-size: 1.1rem;
             margin-bottom: 0.3rem;
@@ -729,28 +742,28 @@
             <div class="brands-grid">
                 <div class="brand-card">
                     <img src="images/hyundai.png" alt="Hyundai logo">
-                    <h3>HYUNDAI</h3>
-                    <p>Genuine (MOBIS) & OEM</p>
+                    <h3 class="visually-hidden">HYUNDAI</h3>
+                    <p class="visually-hidden">Genuine (MOBIS) & OEM</p>
                 </div>
                 <div class="brand-card">
                     <img src="images/kia.png" alt="Kia logo">
-                    <h3>KIA</h3>
-                    <p>Genuine (MOBIS) & OEM</p>
+                    <h3 class="visually-hidden">KIA</h3>
+                    <p class="visually-hidden">Genuine (MOBIS) & OEM</p>
                 </div>
                 <div class="brand-card">
                     <img src="images/kgm.jpg" alt="KG Mobility (Ssangyong) logo">
-                    <h3>KG MOBILITY</h3>
-                    <p>Ssangyong Genuine Parts</p>
+                    <h3 class="visually-hidden">KG MOBILITY</h3>
+                    <p class="visually-hidden">Ssangyong Genuine Parts</p>
                 </div>
                 <div class="brand-card">
                     <img src="images/gm.png" alt="GM Chevrolet logo">
-                    <h3>CHEVROLET</h3>
-                    <p>GM Korea Parts</p>
+                    <h3 class="visually-hidden">CHEVROLET</h3>
+                    <p class="visually-hidden">GM Korea Parts</p>
                 </div>
                 <div class="brand-card">
                     <img src="images/renault.png" alt="Renault logo">
-                    <h3>RENAULT</h3>
-                    <p>Renault Korea Parts</p>
+                    <h3 class="visually-hidden">RENAULT</h3>
+                    <p class="visually-hidden">Renault Korea Parts</p>
                 </div>
             </div>
         </section>
